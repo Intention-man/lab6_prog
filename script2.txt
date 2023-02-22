@@ -1,0 +1,3 @@
+execute_script C:\Users\Михаил\Documents\ИТ\IntelliJProjects\script_for_lab_prog_5.txt
+info
+history
