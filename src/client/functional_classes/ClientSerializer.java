@@ -23,6 +23,7 @@ public class ClientSerializer {
             host = InetAddress.getByName("localhost");
             clientPort = 5000;
             serverAddress = new InetSocketAddress(host, 7000);
+            socket = new DatagramSocket(clientPort);
         } catch (SocketException | UnknownHostException e) {
             throw new RuntimeException(e);
         }
@@ -48,20 +49,21 @@ public class ClientSerializer {
             buffer = ByteBuffer.wrap(byteBAOS);
             dc.send(buffer, serverAddress);
             System.out.println(2);
-            dc.close();
+//            dc.close();
 
             // space between sending and getting
 
-            DatagramSocket socket = new DatagramSocket(clientPort);
             DatagramPacket packet = new DatagramPacket(byteBAOS, byteBAOS.length);
             socket.setSoTimeout(10000);
             socket.receive(packet);
+            System.out.println(3);
 
-
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteBAOS);
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(packet.getData());
             ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
+            System.out.println(4);
             CommandMessage deserializedCommandMessage = (CommandMessage) objectInputStream.readObject();
-            socket.close();
+            System.out.println(5);
+//            socket.close();
             return deserializedCommandMessage.getClassname();
 //        return "work, you know?!)";
 //        for (byte j : arr) {
@@ -71,12 +73,13 @@ public class ClientSerializer {
             System.out.println(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-        } finally {
-            socket.close();
         }
+//        finally {
+//            socket.close();
+//        }
         return "false";
     }
-    public void close() {
-        socket.close();
-    }
+//    public void close() {
+//        socket.close();
+//    }
 }
