@@ -9,7 +9,7 @@ import java.nio.channels.DatagramChannel;
 
 public class ServerSerializer{
     private static boolean running;
-    private static byte[] byteCommandMessage = new byte[256];
+    private static byte[] byteCommandMessage = new byte[2048];
     static InetAddress host;
     static int serverPortToSend = 7777;
     private static DatagramSocket socketToSend;
