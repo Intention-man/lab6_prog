@@ -11,16 +11,18 @@ public class ServerSerializer{
     private static boolean running;
     private static byte[] byteCommandMessage = new byte[256];
     static InetAddress host;
-    static int serverPort = 7777;
-    private static DatagramSocket socket;
-    static SocketAddress socketAddress;
+    static int serverPortToSend = 7777;
+    private static DatagramSocket socketToSend;
+    static SocketAddress socketAddressToGet;
+    static DatagramChannel datagramChannel;
+    static ByteBuffer buffer;
 
     static {
         try {
-            socket = new DatagramSocket(serverPort);
-            socketAddress = new InetSocketAddress(7000);
+            socketToSend = new DatagramSocket(serverPortToSend);
+            socketAddressToGet = new InetSocketAddress(7000);
         } catch (SocketException e) {
-            throw new RuntimeException(e);
+            System.out.println(e);;
         }
     }
 
@@ -29,19 +31,16 @@ public class ServerSerializer{
         running = true;
         try {
             while (running) {
-                DatagramChannel datagramChannel;
-                ByteBuffer buffer;
                 try {
                     datagramChannel = DatagramChannel.open();
-                    datagramChannel.bind(socketAddress);
+                    datagramChannel.bind(socketAddressToGet);
                     System.out.println(1);
 
 //                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
 //                    ObjectOutputStream oos = new ObjectOutputStream(bos);
 //                    oos.writeObject(commandMessage);
 
-                    buffer = ByteBuffer.wrap(byteCommandMessage);
-                    socketAddress = datagramChannel.receive(buffer);
+                    datagramChannel.receive(ByteBuffer.wrap(byteCommandMessage)); // ? снова socketAddress
                     ByteArrayInputStream bis = new ByteArrayInputStream(byteCommandMessage);
                     ObjectInputStream ois = new ObjectInputStream(bis);
                     CommandMessage deserializedCommandMessage = (CommandMessage) ois.readObject();
@@ -55,17 +54,17 @@ public class ServerSerializer{
                     ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
                     objectOutputStream.writeObject(deserializedCommandMessage);
                     byte[] byteBAOS = byteArrayOutputStream.toByteArray();
-                    buffer = ByteBuffer.wrap(byteBAOS);
-
+//                    buffer = ByteBuffer.wrap(byteBAOS);
+                    System.out.println(2);
                     host = InetAddress.getByName("localhost");
                     DatagramPacket packet = new DatagramPacket(byteBAOS, byteBAOS.length, host, 5000);
-                    socket.send(packet);
+                    socketToSend.send(packet);
                 } catch (ClassNotFoundException | IOException e) {
                     throw new RuntimeException(e);
                 }
             }
         } finally {
-            socket.close();
+            socketToSend.close();
         }
     }
 }
