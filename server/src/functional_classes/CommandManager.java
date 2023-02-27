@@ -2,25 +2,34 @@ package functional_classes;
 
 import auxiliary_classes.CommandMessage;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
 
 public class CommandManager {
 
-    public static <T> T execution(CommandMessage commandMessage) {
+    private HashMap<String, Object> executors = new HashMap<>();
+
+    public <T> void addExecutor(String className, T executor){
+        executors.put(className, executor);
+    }
+
+    public <T> T execution(CommandMessage commandMessage) {
 
         String className = commandMessage.getClassname();
-        System.out.println(className);
-        Object o = null;
+        Object o;
         try {
-            Class<?> c = Class.forName("server.functional_classes." + className);
-            Method methodToInvoke = c.getMethod(commandMessage.getCommandName());
-            System.out.println(c.getName() + "." + methodToInvoke.getName());
+            Class<?> c = Class.forName("functional_classes." + className);
+            Method methodToInvoke = (commandMessage.getCommandData() != null ? c.getMethod(commandMessage.getCommandName(), commandMessage.getCommandData().getClass()) : c.getMethod(commandMessage.getCommandName()));
+
+//            System.out.println(c.getName() + "." + methodToInvoke.getName());
             if (commandMessage.getCommandData() != null) {
-                o = (T) methodToInvoke.invoke(c, commandMessage.getCommandData());
+                o = (T) methodToInvoke.invoke(executors.get(className), commandMessage.getCommandData());
             } else {
-                o = (T) methodToInvoke.invoke(c);
+                o = (T) methodToInvoke.invoke(executors.get(className));
             }
+//            System.out.println(o.getClass());
 
             return (T) o;
         } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | SecurityException |

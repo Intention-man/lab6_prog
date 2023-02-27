@@ -3,6 +3,8 @@ package movies_classes;
 
 import org.simpleframework.xml.Element;
 
+import java.io.Serializable;
+
 /**
  *    Location<T, U, S> - unnecessary to use class, created specially for Person
  *    @param  {T} locX
@@ -10,7 +12,7 @@ import org.simpleframework.xml.Element;
  *    @param  {S} locZ
  * */
 
-public class Location<T, U, S> {
+public class Location<T, U, S> implements Serializable {
     @Element(required=false, name = "locX")
     private T locX;
     @Element(required=false, name = "locY")

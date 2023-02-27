@@ -2,6 +2,8 @@ package movies_classes;
 
 import org.simpleframework.xml.Element;
 
+import java.io.Serializable;
+
 /**
  *    Person<N> - created specially for Movie
  *    @param  {String} name
@@ -10,7 +12,7 @@ import org.simpleframework.xml.Element;
  *    @param  {Location} location
  * */
 
-public class Person<N>{
+public class Person<N> implements Serializable {
     @Element(name="name")
     private String name; //Поле не может быть null, Строка не может быть пустой
     @Element(name="passportID")

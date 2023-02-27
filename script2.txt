@@ -1,3 +1,3 @@
-execute_script C:\Users\Михаил\Documents\ИТ\IntelliJProjects\script_for_lab_prog_5.txt
+execute_script C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog\script1.txt
 info
 history

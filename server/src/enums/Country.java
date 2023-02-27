@@ -1,10 +1,12 @@
 package enums;
 
+import java.io.Serializable;
+
 /**
  *    Enum, containing some countries names
  * */
 
-public enum Country {
+public enum Country implements Serializable {
     FRANCE,
     INDIA,
     VATICAN,

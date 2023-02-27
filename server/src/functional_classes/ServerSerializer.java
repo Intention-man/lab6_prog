@@ -1,79 +1,69 @@
 package functional_classes;
 
-
 import auxiliary_classes.CommandMessage;
+import auxiliary_classes.ResponseMessage;
 
 import java.io.*;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 
-public class ServerSerializer{
-    private static boolean running;
-    private static byte[] byteCommandMessage = new byte[2048];
-    static InetAddress host;
-    static int serverPortToSend = 7777;
-    private static DatagramSocket socketToSend;
-    static SocketAddress socketAddressToGet;
-    static DatagramChannel datagramChannel;
-    static ByteBuffer buffer;
 
-    static {
-        try {
-            socketToSend = new DatagramSocket(serverPortToSend);
-            socketAddressToGet = new InetSocketAddress(7000);
-        } catch (SocketException e) {
-            System.out.println(e);;
-        }
+public class ServerSerializer {
+    private boolean running;
+    private byte[] byteCommandMessage = new byte[8192];
+    InetAddress host;
+    int serverPortToSend = 7777;
+    private DatagramSocket socketToSend;
+    SocketAddress socketAddressToGet;
+    DatagramChannel datagramChannel;
+    CommandManager commandManager;
+
+    public ServerSerializer(CommandManager commandManager) throws IOException {
+        socketToSend = new DatagramSocket(serverPortToSend);
+        socketAddressToGet = new InetSocketAddress(7000);
+        this.commandManager = commandManager;
+        datagramChannel = DatagramChannel.open();
+        datagramChannel.bind(socketAddressToGet);
     }
 
 
-    public static void run() {
-        running = true;
+    public void correspondeWithClient() {
         try {
-            while (running) {
-                try {
-                    // getting and formalize serialized object
-                    datagramChannel = DatagramChannel.open();
-                    datagramChannel.bind(socketAddressToGet);
-                    System.out.println(1);
+            while (true){
+//                datagramChannel.configureBlocking(false);
 
-//                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
-//                    ObjectOutputStream oos = new ObjectOutputStream(bos);
-//                    oos.writeObject(commandMessage);
+                // getting and formalize serialized object
 
-                    datagramChannel.receive(ByteBuffer.wrap(byteCommandMessage)); // ? снова socketAddress
-                    ByteArrayInputStream bis = new ByteArrayInputStream(byteCommandMessage);
-                    ObjectInputStream ois = new ObjectInputStream(bis);
-                    CommandMessage deserializedCommandMessage = (CommandMessage) ois.readObject();
-                    datagramChannel.close();
+                datagramChannel.receive(ByteBuffer.wrap(byteCommandMessage));
+                ByteArrayInputStream bis = new ByteArrayInputStream(byteCommandMessage);
+                ObjectInputStream ois = new ObjectInputStream(bis);
+                CommandMessage deserializedCommandMessage = (CommandMessage) ois.readObject();
 
-                    // command execution
-//                    CollectionWorker.getLast12Commands();
-                    Object result = CommandManager.execution(deserializedCommandMessage);
-                    assert result != null;
-                    System.out.println(result);
-//                    deserializedCommandMessage.setClassname("right changed class!");
-                    //System.out.println(deserializedCommandMessage.getClassname());
+                // command execution
 
+                Object result = commandManager.execution(deserializedCommandMessage);
+                assert result != null;
+                ResponseMessage<Object> response = new ResponseMessage<>(result.getClass().getName(), result);
 
-                    // sending
+                // sending
 
-                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                    ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
-                    objectOutputStream.writeObject(deserializedCommandMessage);
-                    byte[] byteBAOS = byteArrayOutputStream.toByteArray();
-//                    buffer = ByteBuffer.wrap(byteBAOS);
-                    System.out.println(2);
-                    host = InetAddress.getByName("localhost");
-                    DatagramPacket packet = new DatagramPacket(byteBAOS, byteBAOS.length, host, 5000);
-                    socketToSend.send(packet);
-                } catch (ClassNotFoundException | IOException e) {
-                    throw new RuntimeException(e);
-                }
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+                objectOutputStream.writeObject(response);
+                byte[] byteBAOS = byteArrayOutputStream.toByteArray();
+                host = InetAddress.getByName("localhost");
+                DatagramPacket packet = new DatagramPacket(byteBAOS, byteBAOS.length, host, 5000);
+                socketToSend.send(packet);
             }
+        } catch (ClassNotFoundException | IOException e) {
+            throw new RuntimeException(e);
         } finally {
             socketToSend.close();
         }
+    }
+
+    public void close() throws IOException {
+        datagramChannel.close();
     }
 }

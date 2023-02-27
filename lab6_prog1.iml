@@ -8,6 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="simpleframework.simple.xml" level="project" />
-    <orderEntry type="library" exported="" name="carrotsearch.thirdparty.simple.xml.safe" level="project" />
+    <orderEntry type="library" name="carrotsearch.thirdparty.simple.xml.safe" level="project" />
   </component>
 </module>

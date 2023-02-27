@@ -1,6 +1,5 @@
 package functional_classes;
 
-
 import movies_classes.Movies;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
@@ -22,62 +21,36 @@ public class FileWorker {
 
     // initialization
 
-    private static Movies movies;
-    static String xmlFileName = System.getenv("FileWithCollection");
-    static Path path = Paths.get(xmlFileName);
-    static Serializer serializer = new Persister();
-    static Scanner scanner;
+    private final String xmlFileName = System.getenv("FileWithCollection");
+    private final Path path = Paths.get(xmlFileName);
+    private final Serializer serializer = new Persister();
+    private Scanner scanner;
 
-    static {
-        try {
-            scanner = new Scanner(path);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
+    public FileWorker() throws IOException {
+        this.scanner = new Scanner(path);
     }
 
     // common
 
 
-    public static Movies fill() {
+    public Movies fill() {
         try {
             return serializer.read(Movies.class, new File(xmlFileName));
         } catch (Exception e) {
-            System.out.println("e");
+            System.out.println(e);
         }
         return null;
     }
 
-    public static void manageClass(Movies movies){
-        FileWorker.movies = movies;
-    }
-
     // commands execution
 
-
-    public static void readFile(Scanner fileScanner, String fileName) {
-        try {
-
-            while (fileScanner.hasNextLine()) {
-                String line = fileScanner.nextLine();
-                Receiver.startNewAction(line);
-            }
-            fileScanner.close();
-            Receiver.getExecutedFiles().remove(fileName);
-            Receiver.chosenScanner = new Scanner(System.in);
-
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }
-    }
-
-    public static void save() {
+    public boolean save(Movies movies) {
         try {
             serializer.write(movies, new File(xmlFileName));
         } catch (Exception e) {
             System.out.println("Ошибка при сохранении коллекции в файл. Узнайте у разработчика в чем дело)");
         }
-
+        return true;
     }
-
 }

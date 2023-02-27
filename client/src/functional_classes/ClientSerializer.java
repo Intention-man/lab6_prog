@@ -2,6 +2,7 @@ package functional_classes;
 
 
 import auxiliary_classes.CommandMessage;
+import auxiliary_classes.ResponseMessage;
 
 import java.io.*;
 import java.net.*;
@@ -31,14 +32,12 @@ public class ClientSerializer {
     }
 
 
-    public static String send(CommandMessage commandMessage) {
-
-//        byte[] arr = {0,1,2,3,4,5,6,7,8,9};
+    public static ResponseMessage send(CommandMessage<Object> commandMessage) {
 
         // creation channel and open it
         try {
             dc = DatagramChannel.open();
-            System.out.println(1);
+            dc.configureBlocking(false);
 
             // byte object formation
 
@@ -49,27 +48,21 @@ public class ClientSerializer {
             byte[] byteBAOS = byteArrayOutputStream.toByteArray();
             buffer = ByteBuffer.wrap(byteBAOS);
             dc.send(buffer, serverAddress);
-            System.out.println(2);
 //            dc.close();
 
             // space between sending and getting
-            byteBAOS = new byte[2048];
+            byteBAOS = new byte[8192];
             DatagramPacket packet = new DatagramPacket(byteBAOS, byteBAOS.length);
             socket.setSoTimeout(10000);
             socket.receive(packet);
-            System.out.println(3);
 
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(packet.getData());
             ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
-            System.out.println(4);
-            CommandMessage deserializedCommandMessage = (CommandMessage) objectInputStream.readObject();
-            System.out.println(5);
+            ResponseMessage deserializedResponse = (ResponseMessage) objectInputStream.readObject();
 //            socket.close();
-            return deserializedCommandMessage.getClassname();
-//        return "work, you know?!)";
-//        for (byte j : arr) {
-//            System.out.println(j);
-//        }
+            return deserializedResponse;
+        } catch (SocketTimeoutException e){
+            System.out.println("Убедитесь, что серверное приложение включено");
         } catch (IOException e) {
             System.out.println(e);
         } catch (ClassNotFoundException e) {
@@ -78,9 +71,7 @@ public class ClientSerializer {
 //        finally {
 //            socket.close();
 //        }
-        return "false";
+        return new ResponseMessage<>("null", null);
     }
-//    public void close() {
-//        socket.close();
-//    }
+
 }

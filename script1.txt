@@ -13,5 +13,5 @@ FRANCE
 194
 -1248
 0.99
-execute_script C:\Users\Михаил\Documents\ИТ\IntelliJProjects\script2.txt
+execute_script C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog\script2.txt
 show

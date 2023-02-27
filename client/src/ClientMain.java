@@ -1,21 +1,32 @@
-import functional_classes.Receiver;
+import functional_classes.ClientReader;
+import functional_classes.ClientManager;
+import functional_classes.Writer;
 
-import java.io.IOException;
-import java.net.SocketException;
-import java.net.UnknownHostException;
 import java.util.Objects;
 
 
 public class ClientMain {
     public static void main(String[] args) {
+        String executedCommand;
         try {
-            Receiver.suggestNewAction();
-            while (!Objects.equals(Receiver.getExecutedCommand(), "exit")) {
-                Receiver.startNewAction(Receiver.getExecutedCommand());
-                Receiver.suggestNewAction();
+            // initialization
+
+            ClientReader reader = new ClientReader();
+            Writer writer = new Writer();
+            ClientManager clientManager = new ClientManager(reader, writer);
+            reader.setClientManager(clientManager);
+
+            // execution
+
+            writer.suggestNewAction();
+            executedCommand = reader.readNextLine().trim();
+            while (!Objects.equals(executedCommand, "exit")) {
+                clientManager.startNewAction(executedCommand);
+                writer.suggestNewAction();
+                executedCommand = reader.readNextLine().trim();
             }
         } catch (Exception e) {
-            System.out.println("e.getMessage()");
+            System.out.println(e);
         }
     }
 }

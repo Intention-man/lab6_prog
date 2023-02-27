@@ -1,11 +1,12 @@
 package movies_classes;
 
-import enums.Country;
 import enums.MovieGenre;
 import enums.MpaaRating;
+import enums.Country;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -23,7 +24,7 @@ import java.util.HashMap;
  * */
 
 @Root
-public class Movie {
+public class Movie implements Serializable {
     @Element(name="id")
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     @Element(name="name")
@@ -43,7 +44,6 @@ public class Movie {
     private MpaaRating mpaaRating; //Поле может быть null
     @Element(required=false, name="operator")
     private Person operator; //Поле может быть null
-
 
 
     public Movie(){}
@@ -72,10 +72,10 @@ public class Movie {
         this.length = (long) data.get(4);
         this.genre = (data.get(5) == null ?  null : (MovieGenre) data.get(5));
         this.mpaaRating = (data.get(6) == null ?  null : (MpaaRating) data.get(6));
-        this.operator = new Person((String) data.get(7), (String) data.get(8), (data.get(9) == null ? null : (Country) data.get(9)),
-                new Location((data.get(10) == null ? null : (long) data.get(10)),
-                        (data.get(11) == null ? null : (long) data.get(11)),
-                        (data.get(12) == null ? null : (double) data.get(12))));
+        this.operator = new Person((String) data.get(7), (String) data.get(8), (data.get(9) == null ? null : data.get(9)),
+                new Location((data.get(10) == null ? null : data.get(10)),
+                        (data.get(11) == null ? null : data.get(11)),
+                        (data.get(12) == null ? null : data.get(12))));
     }
 
     public void update(HashMap data){
@@ -87,10 +87,10 @@ public class Movie {
         this.length = (long) data.get(4);
         this.genre = (data.get(5) == null ?  null : (MovieGenre) data.get(5));
         this.mpaaRating = (data.get(6) == null ?  null : (MpaaRating) data.get(6));
-        this.operator = new Person((String) data.get(7), (String) data.get(8), (data.get(9) == null ? null : (Country) data.get(9)),
-                new Location((data.get(10) == null ? null : (long) data.get(10)),
-                        (data.get(11) == null ? null : (long) data.get(11)),
-                        (data.get(12) == null ? null : (double) data.get(12))));
+        this.operator = new Person((String) data.get(7), (String) data.get(8), (data.get(9) == null ? null : data.get(9)),
+                new Location((data.get(10) == null ? null : data.get(10)),
+                        (data.get(11) == null ? null : data.get(11)),
+                        (data.get(12) == null ? null : data.get(12))));
     }
 
     // getters

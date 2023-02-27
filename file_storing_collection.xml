@@ -1,65 +1,63 @@
 <movies initializationDate="2023-02-14 17:28:26.973 MSK">
    <moviesList>
       <movie>
-         <id>3</id>
-         <name>dsfgf</name>
+         <id>4</id>
+         <name>Короткий фильм</name>
          <coordinates>
-            <coordX>124</coordX>
-            <coordY>374</coordY>
+            <coordX>78</coordX>
+            <coordY>-829</coordY>
          </coordinates>
-         <creationDate>2023-02-14 20:45:46.929 MSK</creationDate>
-         <oscarsCount>8908436</oscarsCount>
-         <length>89235</length>
+         <creationDate>2023-02-15 10:04:53.721 MSK</creationDate>
+         <oscarsCount>238</oscarsCount>
+         <length>50</length>
+         <genre>WESTERN</genre>
+         <mpaaRating>R</mpaaRating>
          <operator>
-            <name>djsifjo 91240</name>
-            <passportID>123456789</passportID>
+            <name>Алексей</name>
+            <passportID>1694 935891</passportID>
+            <nationality class="enums.Country">SOUTH_KOREA</nationality>
+            <location>
+               <locX class="java.lang.Long">100</locX>
+               <locZ class="java.lang.Double">0.0</locZ>
+            </location>
+         </operator>
+      </movie>
+      <movie>
+         <id>6</id>
+         <name>Что-то нечто</name>
+         <coordinates>
+            <coordX>123958</coordX>
+            <coordY>-235</coordY>
+         </coordinates>
+         <creationDate>2023-02-24 18:36:07.747 MSK</creationDate>
+         <oscarsCount>82943</oscarsCount>
+         <length>8349</length>
+         <mpaaRating>PG_13</mpaaRating>
+         <operator>
+            <name>Андрей</name>
+            <passportID>12647 903485</passportID>
+            <nationality class="enums.Country">INDIA</nationality>
+            <location>
+               <locX class="java.lang.Long">-2385</locX>
+               <locZ class="java.lang.Double">9.9</locZ>
+            </location>
+         </operator>
+      </movie>
+      <movie>
+         <id>7</id>
+         <name>hjgid</name>
+         <coordinates>
+            <coordX>89</coordX>
+            <coordY>134</coordY>
+         </coordinates>
+         <creationDate>2023-02-24 18:46:00.260 MSK</creationDate>
+         <oscarsCount>89</oscarsCount>
+         <length>10000000</length>
+         <genre>ADVENTURE</genre>
+         <operator>
+            <name>124</name>
+            <passportID>312563426j89</passportID>
             <location/>
-         </operator>
-      </movie>
-      <movie>
-         <id>1</id>
-         <name>Название 1</name>
-         <coordinates>
-            <coordX>-310</coordX>
-            <coordY>162478</coordY>
-         </coordinates>
-         <creationDate>2023-02-14 19:11:52.357 MSK</creationDate>
-         <oscarsCount>6128570431678</oscarsCount>
-         <length>100</length>
-         <genre>ADVENTURE</genre>
-         <mpaaRating>G</mpaaRating>
-         <operator>
-            <name>Алина</name>
-            <passportID>6239 567890</passportID>
-            <nationality class="server.enums.Country">FRANCE</nationality>
-            <location>
-               <locX class="java.lang.Long">194</locX>
-               <locY class="java.lang.Long">-1248</locY>
-               <locZ class="java.lang.Double">0.99</locZ>
-            </location>
-         </operator>
-      </movie>
-      <movie>
-         <id>5</id>
-         <name>Название 1</name>
-         <coordinates>
-            <coordX>-310</coordX>
-            <coordY>162478</coordY>
-         </coordinates>
-         <creationDate>2023-02-15 12:30:44.49 MSK</creationDate>
-         <oscarsCount>6128570431678</oscarsCount>
-         <length>100</length>
-         <genre>ADVENTURE</genre>
-         <mpaaRating>G</mpaaRating>
-         <operator>
-            <name>Алина</name>
-            <passportID>6239 567890</passportID>
-            <nationality class="server.enums.Country">FRANCE</nationality>
-            <location>
-               <locX class="java.lang.Long">194</locX>
-               <locY class="java.lang.Long">-1248</locY>
-               <locZ class="java.lang.Double">0.99</locZ>
-            </location>
          </operator>
       </movie>
       <movie>
@@ -89,7 +87,7 @@
          </coordinates>
          <creationDate>2023-02-14 19:22:02.664 MSK</creationDate>
          <oscarsCount>1</oscarsCount>
-         <length>180021478923590</length>
+         <length>1800214</length>
          <genre>TRAGEDY</genre>
          <operator>
             <name>Чел</name>
@@ -98,25 +96,20 @@
          </operator>
       </movie>
       <movie>
-         <id>4</id>
-         <name>Короткий фильм</name>
+         <id>5</id>
+         <name>Название 2</name>
          <coordinates>
-            <coordX>78</coordX>
-            <coordY>-829</coordY>
+            <coordX>7128</coordX>
+            <coordY>-48</coordY>
          </coordinates>
-         <creationDate>2023-02-15 10:04:53.721 MSK</creationDate>
-         <oscarsCount>238</oscarsCount>
-         <length>50</length>
-         <genre>WESTERN</genre>
-         <mpaaRating>R</mpaaRating>
+         <creationDate>2023-02-24 20:50:10.256 MSK</creationDate>
+         <oscarsCount>112</oscarsCount>
+         <length>891</length>
          <operator>
-            <name>Алексей</name>
-            <passportID>1694 935891</passportID>
-            <nationality class="server.enums.Country">SOUTH_KOREA</nationality>
-            <location>
-               <locX class="java.lang.Long">100</locX>
-               <locZ class="java.lang.Double">0.0</locZ>
-            </location>
+            <name>Екатерина</name>
+            <passportID>12849 03285</passportID>
+            <nationality class="enums.Country">SOUTH_KOREA</nationality>
+            <location/>
          </operator>
       </movie>
    </moviesList>
