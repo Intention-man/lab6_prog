@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="carrotsearch.thirdparty.simple.xml.safe" type="repository">
+    <properties maven-id="com.carrotsearch.thirdparty:simple-xml-safe:2.7.1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/carrotsearch/thirdparty/simple-xml-safe/2.7.1/simple-xml-safe-2.7.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -5,18 +5,10 @@ public class Synchronizer {
     int value;
 
     public void consoleThread(ServerReader serverReader) throws InterruptedException {
-//        while (ready);
-        synchronized(this) {
             serverReader.readConsole();
-            ready = true;
-        }
     }
 
     public void clientChannelThread(ServerSerializer serverSerializer) throws InterruptedException {
-//        while (!ready);
-        synchronized(this) {
-            serverSerializer.correspondeWithClient();
-            ready = false;
-        }
+        serverSerializer.correspondeWithClient();
     }
 }

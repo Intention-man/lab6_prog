@@ -50,5 +50,4 @@ public class Movies implements Serializable {
     public Date getInitializationDate() {
         return initializationDate;
     }
-
 }

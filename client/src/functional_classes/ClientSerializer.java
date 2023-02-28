@@ -59,7 +59,6 @@ public class ClientSerializer {
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(packet.getData());
             ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
             ResponseMessage deserializedResponse = (ResponseMessage) objectInputStream.readObject();
-//            socket.close();
             return deserializedResponse;
         } catch (SocketTimeoutException e){
             System.out.println("Убедитесь, что серверное приложение включено");

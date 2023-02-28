@@ -28,6 +28,7 @@ public class ClientManager {
 
     public void startNewAction(String executedCommand) {
         try {
+            System.out.println("Начата новая команда");
             executedCommand = executedCommand.trim();
             CommandMessage<Object> commandMessage;
             commandMessage = new CommandMessage<>("CollectionWorker", "addCommandToHistory", executedCommand.split(" ")[0]);
@@ -65,12 +66,12 @@ public class ClientManager {
                     writer.printResponse(ClientSerializer.send(commandMessage));
                     System.out.println("Исполняемые в данный момент файлы: " + clientReader.getExecutedFiles());
                 }
-                case ("save") -> {
-                    commandMessage = new CommandMessage<>("CollectionWorker", "getMovies", null);
-                    Movies movies = (Movies) ClientSerializer.send(commandMessage).getResponseData();
-                    commandMessage = new CommandMessage<>("FileWorker", "save", movies);
-                    writer.printResponse(ClientSerializer.send(commandMessage));
-                }
+//                case ("save") -> {
+//                    commandMessage = new CommandMessage<>("CollectionWorker", "getMovies", null);
+//                    Movies movies = (Movies) ClientSerializer.send(commandMessage).getResponseData();
+//                    commandMessage = new CommandMessage<>("FileWorker", "save", movies);
+//                    writer.printResponse(ClientSerializer.send(commandMessage));
+//                }
                 case ("show") -> {
                     commandMessage = new CommandMessage<>("CollectionWorker", "show", null);
                     writer.printResponse(ClientSerializer.send(commandMessage));

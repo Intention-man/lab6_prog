@@ -13,7 +13,7 @@ public class ServerMain {
             commandManager.addExecutor("CollectionWorker", collectionWorker);
             commandManager.addExecutor("FileWorker", fileWorker);
 
-            ServerReader serverReader = new ServerReader();
+            ServerReader serverReader = new ServerReader(commandManager);
             ServerSerializer serverSerializer = new ServerSerializer(commandManager);
 
             run(serverSerializer, serverReader);

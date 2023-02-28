@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b1871877-4e01-47ac-bd65-ada03734bedb" name="Changes" comment="It remains to do asynchrony">
+      <change beforePath="$PROJECT_DIR$/client/src/functional_classes/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/ClientManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/functional_classes/ClientSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/ClientSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_storing_collection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file_storing_collection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/functional_classes/CollectionWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/functional_classes/CollectionWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/functional_classes/ServerReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/functional_classes/ServerReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/functional_classes/Synchronizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/functional_classes/Synchronizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/movies_classes/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/movies_classes/Movies.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/io/Serializable.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LzeJFepktyCHfdNtDhoEjKgHD7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Михаил/Documents/ИТ/Актуальные лабы/lab6_prog&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog" />
+      <recent name="C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog\client" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog\common\src" />
+      <recent name="C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog\common" />
+      <recent name="C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog" />
+      <recent name="C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog\server\src" />
+      <recent name="C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog\client\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ClientMain">
+    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientMain" />
+      <module name="client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerMain" />
+      <module name="server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ServerMain" />
+        <item itemvalue="Application.ClientMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1871877-4e01-47ac-bd65-ada03734bedb" name="Changes" comment="" />
+      <created>1676878267430</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676878267430</updated>
+      <workItem from="1676878268949" duration="599000" />
+      <workItem from="1676879067703" duration="1512000" />
+      <workItem from="1676884307442" duration="730000" />
+      <workItem from="1676888220272" duration="1075000" />
+      <workItem from="1676892051782" duration="10165000" />
+      <workItem from="1676913799996" duration="673000" />
+      <workItem from="1676956545419" duration="9859000" />
+      <workItem from="1676994010856" duration="314000" />
+      <workItem from="1676994339859" duration="5561000" />
+      <workItem from="1677049976999" duration="502000" />
+      <workItem from="1677051442764" duration="3316000" />
+      <workItem from="1677067226241" duration="508000" />
+      <workItem from="1677079357960" duration="40000" />
+      <workItem from="1677079443953" duration="392000" />
+      <workItem from="1677079869704" duration="423000" />
+      <workItem from="1677080351590" duration="646000" />
+      <workItem from="1677127638513" duration="3921000" />
+      <workItem from="1677143314463" duration="221000" />
+      <workItem from="1677153248383" duration="364000" />
+      <workItem from="1677166336869" duration="829000" />
+      <workItem from="1677169323505" duration="6942000" />
+      <workItem from="1677176355284" duration="2053000" />
+      <workItem from="1677178434768" duration="676000" />
+      <workItem from="1677179129035" duration="417000" />
+      <workItem from="1677217756856" duration="17954000" />
+      <workItem from="1677241497207" duration="3817000" />
+      <workItem from="1677251919427" duration="10493000" />
+      <workItem from="1677301301879" duration="8732000" />
+      <workItem from="1677315063921" duration="440000" />
+      <workItem from="1677330309196" duration="8143000" />
+      <workItem from="1677398138476" duration="6992000" />
+      <workItem from="1677475238306" duration="10195000" />
+      <workItem from="1677495584451" duration="1682000" />
+      <workItem from="1677499267861" duration="241000" />
+      <workItem from="1677581764507" duration="653000" />
+    </task>
+    <task id="LOCAL-00001" summary="Some changes">
+      <created>1677133308135</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677133308135</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Some changes">
+      <created>1677133355538</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677133355538</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Other files added to git">
+      <created>1677153307277</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677153307277</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed a problem with receiving data on the ClientSerializer">
+      <created>1677166861108</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677166861108</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed a problem with receiving data on the ClientSerializer">
+      <created>1677166926896</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677166926896</updated>
+    </task>
+    <task id="LOCAL-00006" summary="The project is divided into modules">
+      <created>1677179418045</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677179418045</updated>
+    </task>
+    <task id="LOCAL-00007" summary="It remains to do asynchrony">
+      <created>1677479433150</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677479433150</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Some changes" />
+    <MESSAGE value="Other files added to git" />
+    <MESSAGE value="Fixed a problem with receiving data on the ClientSerializer" />
+    <MESSAGE value="The project is divided into modules" />
+    <MESSAGE value="It remains to do asynchrony" />
+    <option name="LAST_COMMIT_MESSAGE" value="It remains to do asynchrony" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lab6_prog$ServerMain.ic" NAME="ServerMain Coverage Results" MODIFIED="1677080284457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>server.*</FILTER>
+    </SUITE>
+  </component>
+</project>

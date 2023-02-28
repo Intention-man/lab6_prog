@@ -98,7 +98,7 @@ public class CollectionWorker {
         answer.add("Дата и время ининциализации коллекции: " + movies.getInitializationDate());
         answer.add("Количество элементов в колллекции: " + movies.moviesCount());
         answer.add("Список имеющихся в коллекции фильмов (id + название)");
-        movies.getMoviesList()
+        movies.getSortedMovies("name")
                 .forEach(movie -> answer.add(movie.getId() + " - " + movie.getName()));
         return answer;
     }
