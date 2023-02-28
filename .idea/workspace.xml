@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1871877-4e01-47ac-bd65-ada03734bedb" name="Changes" comment="It remains to do asynchrony">
-      <change beforePath="$PROJECT_DIR$/client/src/functional_classes/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/ClientManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/functional_classes/ClientSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/ClientSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_storing_collection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file_storing_collection.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/functional_classes/CollectionWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/functional_classes/CollectionWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/functional_classes/ServerReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/functional_classes/ServerReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/functional_classes/Synchronizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/functional_classes/Synchronizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/movies_classes/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/movies_classes/Movies.java" afterDir="false" />
-    </list>
+    <list default="true" id="b1871877-4e01-47ac-bd65-ada03734bedb" name="Changes" comment="Almost all" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,6 +124,7 @@
       <workItem from="1677495584451" duration="1682000" />
       <workItem from="1677499267861" duration="241000" />
       <workItem from="1677581764507" duration="653000" />
+      <workItem from="1677584668160" duration="70000" />
     </task>
     <task id="LOCAL-00001" summary="Some changes">
       <created>1677133308135</created>
@@ -183,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677479433150</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Almost all">
+      <created>1677584714815</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677584714815</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +205,8 @@
     <MESSAGE value="Fixed a problem with receiving data on the ClientSerializer" />
     <MESSAGE value="The project is divided into modules" />
     <MESSAGE value="It remains to do asynchrony" />
-    <option name="LAST_COMMIT_MESSAGE" value="It remains to do asynchrony" />
+    <MESSAGE value="Almost all" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost all" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/lab6_prog$ServerMain.ic" NAME="ServerMain Coverage Results" MODIFIED="1677080284457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
