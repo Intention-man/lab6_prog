@@ -5,6 +5,7 @@ import auxiliary_classes.ResponseMessage;
 ;
 import movies_classes.Movies;
 
+import java.io.EOFException;
 import java.util.*;
 
 /**

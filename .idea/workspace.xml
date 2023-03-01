@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b1871877-4e01-47ac-bd65-ada03734bedb" name="Changes" comment="Almost all">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/functional_classes/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/ClientManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/functional_classes/ClientReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/ClientReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/functional_classes/ClientSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/ClientSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/ClientMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/ClientMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/functional_classes/ClientSerializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/functional_classes/ClientSerializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/functional_classes/ServerSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/functional_classes/ServerSerializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +65,7 @@
       <recent name="C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog\client\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientMain">
+  <component name="RunManager" selected="Application.Unnamed">
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientMain" />
       <module name="client" />
@@ -97,8 +94,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientMain" />
         <item itemvalue="Application.ServerMain" />
+        <item itemvalue="Application.ClientMain" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +146,8 @@
       <workItem from="1677587206459" duration="84000" />
       <workItem from="1677595041463" duration="151000" />
       <workItem from="1677646571036" duration="121000" />
-      <workItem from="1677653864463" duration="5519000" />
+      <workItem from="1677653864463" duration="5693000" />
+      <workItem from="1677659734177" duration="1516000" />
     </task>
     <task id="LOCAL-00001" summary="Some changes">
       <created>1677133308135</created>
@@ -221,7 +219,28 @@
       <option name="project" value="LOCAL" />
       <updated>1677657515644</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Almost all">
+      <created>1677659557769</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677659557769</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Almost all">
+      <created>1677659572602</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677659572602</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Almost all">
+      <created>1677659585503</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677659585503</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

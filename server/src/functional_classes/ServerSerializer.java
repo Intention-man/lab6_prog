@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class ServerSerializer {
     private boolean running;
-    private byte[] byteCommandMessage = new byte[8192];
+    private byte[] byteCommandMessage = new byte[1024 * 16];
     InetAddress host;
     int serverPortToSend = 7777;
     private DatagramSocket socketToSend;

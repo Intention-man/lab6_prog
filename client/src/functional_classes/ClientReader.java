@@ -5,6 +5,7 @@ import enums.Country;
 import enums.MovieGenre;
 import enums.MpaaRating;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
@@ -134,7 +135,7 @@ public class ClientReader {
         }
         return answers;
     }
-
+   // execute_script C:\Users\Михаил\Downloads\image_2023-02-23_20-54-17.png
     public void readFile(String fileName) {
         try {
             if (!chosenScanner.equals(new Scanner(System.in)) && executedFiles.contains(fileName)) {
@@ -142,9 +143,16 @@ public class ClientReader {
                 return;
             } else if (chosenScanner.equals(new Scanner(System.in)) || !executedFiles.contains(fileName)) {
                 Path path = Paths.get(fileName);
-                executedFiles.add(fileName);
-                scannerList.add(new Scanner(path));
-                chosenScanner = scannerList.get(scannerList.size() - 1);
+                String mimeType = Files.probeContentType(path);
+                if (Objects.equals(mimeType.split("/")[0], "text"))  {
+                    executedFiles.add(fileName);
+                    scannerList.add(new Scanner(path));
+                    chosenScanner = scannerList.get(scannerList.size() - 1);
+                } else {
+                    System.out.println("Файл должен быть текстовым");
+                    return;
+                }
+
             }
             while (chosenScanner.hasNextLine()) {
 
