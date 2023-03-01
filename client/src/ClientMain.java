@@ -1,8 +1,7 @@
-import functional_classes.ClientReader;
-import functional_classes.ClientManager;
-import functional_classes.Writer;
+import functional_classes.*;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 
 public class ClientMain {
@@ -10,10 +9,17 @@ public class ClientMain {
         String executedCommand;
         try {
             // initialization
+            Store store = new Store();
+            int port;
+            do {
+                System.out.println("Введите номер порта для этого клиентского приложения");
+                port = Integer.parseInt(new Scanner(System.in).nextLine().trim());
+            }  while (!store.addPort(port));
 
+            ClientSerializer clientSerializer = new ClientSerializer(port);
             ClientReader reader = new ClientReader();
             Writer writer = new Writer();
-            ClientManager clientManager = new ClientManager(reader, writer);
+            ClientManager clientManager = new ClientManager(clientSerializer, reader, writer);
             reader.setClientManager(clientManager);
 
             // execution
@@ -25,7 +31,9 @@ public class ClientMain {
                 writer.suggestNewAction();
                 executedCommand = reader.readNextLine().trim();
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
+            System.out.println("Номер порта должен быть числом");
+        } catch (Exception e){
             System.out.println(e);
         }
     }

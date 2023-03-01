@@ -35,7 +35,7 @@ public class ServerSerializer {
 
                 // getting and formalize serialized object
 
-                datagramChannel.receive(ByteBuffer.wrap(byteCommandMessage));
+                socketAddressToGet = datagramChannel.receive(ByteBuffer.wrap(byteCommandMessage));
                 ByteArrayInputStream bis = new ByteArrayInputStream(byteCommandMessage);
                 ObjectInputStream ois = new ObjectInputStream(bis);
                 CommandMessage deserializedCommandMessage = (CommandMessage) ois.readObject();
@@ -47,7 +47,7 @@ public class ServerSerializer {
                 ResponseMessage<Object> response = new ResponseMessage<>(result.getClass().getName(), result);
 
                 // sending
-
+                int port = socketAddressToGet.ge;
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
                 objectOutputStream.writeObject(response);

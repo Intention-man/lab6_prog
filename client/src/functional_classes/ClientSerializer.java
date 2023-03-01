@@ -12,27 +12,23 @@ import java.nio.channels.DatagramChannel;
 
 public class ClientSerializer {
     static DatagramSocket socket;
-    static InetAddress host;
-    static int clientPort;
-
+    InetAddress host;
+    int clientPort;
     static DatagramChannel dc;
     static ByteBuffer buffer;
     static SocketAddress serverAddress;
 
-    static {
-        try {
-            socket = new DatagramSocket();
-            host = InetAddress.getByName("localhost");
-            clientPort = 5000;
-            serverAddress = new InetSocketAddress(host, 7000);
-            socket = new DatagramSocket(clientPort);
-        } catch (SocketException | UnknownHostException e) {
-            throw new RuntimeException(e);
-        }
+
+    public ClientSerializer(int clientPort) throws SocketException, UnknownHostException {
+        this.clientPort = clientPort;
+        socket = new DatagramSocket();
+        host = InetAddress.getByName("localhost");
+        serverAddress = new InetSocketAddress(host, 7000);
+        socket = new DatagramSocket(clientPort);
     }
 
 
-    public static ResponseMessage send(CommandMessage<Object> commandMessage) {
+    public ResponseMessage send(CommandMessage<Object> commandMessage) {
 
         // creation channel and open it
         try {
