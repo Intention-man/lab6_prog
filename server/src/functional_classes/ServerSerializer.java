@@ -7,6 +7,7 @@ import java.io.*;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
+import java.util.ArrayList;
 
 
 public class ServerSerializer {
@@ -38,7 +39,10 @@ public class ServerSerializer {
                 socketAddressToGet = datagramChannel.receive(ByteBuffer.wrap(byteCommandMessage));
                 ByteArrayInputStream bis = new ByteArrayInputStream(byteCommandMessage);
                 ObjectInputStream ois = new ObjectInputStream(bis);
-                CommandMessage deserializedCommandMessage = (CommandMessage) ois.readObject();
+                ArrayList<Object> deserializedData = (ArrayList<Object>)  ois.readObject();
+//                CommandMessage deserializedCommandMessage = (CommandMessage)
+                CommandMessage deserializedCommandMessage = (CommandMessage) deserializedData.get(0);
+                int port = (Integer) deserializedData.get(1);
 
                 // command execution
 
@@ -47,13 +51,12 @@ public class ServerSerializer {
                 ResponseMessage<Object> response = new ResponseMessage<>(result.getClass().getName(), result);
 
                 // sending
-                int port = socketAddressToGet.ge;
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
                 objectOutputStream.writeObject(response);
                 byte[] byteBAOS = byteArrayOutputStream.toByteArray();
                 host = InetAddress.getByName("localhost");
-                DatagramPacket packet = new DatagramPacket(byteBAOS, byteBAOS.length, host, 5000);
+                DatagramPacket packet = new DatagramPacket(byteBAOS, byteBAOS.length, host, port);
                 socketToSend.send(packet);
             }
         } catch (ClassNotFoundException | IOException e) {

@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1871877-4e01-47ac-bd65-ada03734bedb" name="Changes" comment="Almost all">
-      <change afterPath="$PROJECT_DIR$/client/src/functional_classes/Store.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/ClientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/functional_classes/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/ClientManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/functional_classes/ClientSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/ClientSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/functional_classes/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/functional_classes/Writer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/client/ClientMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/ClientMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/functional_classes/ClientManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/functional_classes/ClientManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/client/functional_classes/ClientSerializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/functional_classes/ClientSerializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/functional_classes/ServerSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/functional_classes/ServerSerializer.java" afterDir="false" />
     </list>
@@ -71,7 +68,7 @@
       <recent name="C:\Users\Михаил\Documents\ИТ\Актуальные лабы\lab6_prog\client\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager" selected="Application.ClientMain">
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientMain" />
       <module name="client" />
@@ -152,7 +149,7 @@
       <workItem from="1677587206459" duration="84000" />
       <workItem from="1677595041463" duration="151000" />
       <workItem from="1677646571036" duration="121000" />
-      <workItem from="1677653864463" duration="3287000" />
+      <workItem from="1677653864463" duration="5519000" />
     </task>
     <task id="LOCAL-00001" summary="Some changes">
       <created>1677133308135</created>
@@ -217,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677587213679</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Almost all">
+      <created>1677657515644</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677657515644</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

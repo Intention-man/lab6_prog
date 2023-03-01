@@ -8,6 +8,7 @@ import java.io.*;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
+import java.util.ArrayList;
 
 
 public class ClientSerializer {
@@ -36,10 +37,13 @@ public class ClientSerializer {
             dc.configureBlocking(false);
 
             // byte object formation
+            ArrayList<Object> sendingData = new ArrayList<>();
+            sendingData.add(commandMessage);
+            sendingData.add(clientPort);
 
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
-            objectOutputStream.writeObject(commandMessage);
+            objectOutputStream.writeObject(sendingData);
 
             byte[] byteBAOS = byteArrayOutputStream.toByteArray();
             buffer = ByteBuffer.wrap(byteBAOS);
