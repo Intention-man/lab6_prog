@@ -5,6 +5,7 @@ import enums.Country;
 import enums.MovieGenre;
 import enums.MpaaRating;
 
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -135,6 +136,7 @@ public class ClientReader {
         }
         return answers;
     }
+
    // execute_script C:\Users\Михаил\Downloads\image_2023-02-23_20-54-17.png
     public void readFile(String fileName) {
         try {
@@ -142,6 +144,19 @@ public class ClientReader {
                 System.out.println("Рекурсия! Страшнааааа... Но это тоже обработано, уберите запуск одного и того же файла более чем 1 раз в рекурсивной цепочке и продолжайте работу)");
                 return;
             } else if (chosenScanner.equals(new Scanner(System.in)) || !executedFiles.contains(fileName)) {
+                File file = new File(fileName);
+                if (!file.exists()){
+                    System.out.println("Файл не существует");
+                    return;
+                }
+                if (!file.canRead()){
+                    System.out.println("Файл недоступен для чтения");
+                    return;
+                }
+                if (!file.canExecute()){
+                    System.out.println("Файл недоступен для исполнения");
+                    return;
+                }
                 Path path = Paths.get(fileName);
                 String mimeType = Files.probeContentType(path);
                 if (Objects.equals(mimeType.split("/")[0], "text"))  {
@@ -152,12 +167,8 @@ public class ClientReader {
                     System.out.println("Файл должен быть текстовым");
                     return;
                 }
-
             }
             while (chosenScanner.hasNextLine()) {
-
-//                System.out.println(executedCommand);
-//                System.out.println(chosenScanner);
                 clientManager.startNewAction(chosenScanner.nextLine().trim());
             }
             getExecutedFiles().remove(fileName);

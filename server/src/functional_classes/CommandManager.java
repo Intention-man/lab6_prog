@@ -23,13 +23,11 @@ public class CommandManager {
             Class<?> c = Class.forName("functional_classes." + className);
             Method methodToInvoke = (commandMessage.getCommandData() != null ? c.getMethod(commandMessage.getCommandName(), commandMessage.getCommandData().getClass()) : c.getMethod(commandMessage.getCommandName()));
 
-//            System.out.println(c.getName() + "." + methodToInvoke.getName());
             if (commandMessage.getCommandData() != null) {
                 o = (T) methodToInvoke.invoke(executors.get(className), commandMessage.getCommandData());
             } else {
                 o = (T) methodToInvoke.invoke(executors.get(className));
             }
-//            System.out.println(o.getClass());
 
             return (T) o;
         } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | SecurityException |
